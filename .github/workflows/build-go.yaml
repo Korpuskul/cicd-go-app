@@ -20,5 +20,5 @@ jobs:
       - name: Run tests
         run: go test ./...
       - name: Build binary
-        run: go build -o cicd-go-app .././main.go
+        run: go build -o cicd-go-app ./main.go
       
