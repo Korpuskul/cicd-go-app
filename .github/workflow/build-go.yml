@@ -1,0 +1,24 @@
+name: Build Golang
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Install Golang
+        name: acions/setup-go@v5
+        with:
+          go-version: "1.18"
+      - name: Display Go versions
+        run: go version
+      - name: Install dependecies
+        run: go get .
+      - name: Run tests
+        run: go test ./...
+      - name: Build binary
+        run: go build -o cicd-go-app .././main.go
+      

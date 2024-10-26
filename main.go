@@ -36,6 +36,6 @@ func MyMagicHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	fmt.Printf("result is %3.f for %s\n", C, r.RemoteAddr)
+	fmt.Printf("result is %.3f for %s\n", C, r.RemoteAddr)
 	_, _ = w.Write([]byte(result))
 }
